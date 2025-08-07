@@ -1,19 +1,35 @@
- Qwen3-0.6B — Job Description Struct-Extractor
-A fine-tuned version of Qwen3-0.6B designed for accurate extraction of structured job attributes from raw job descriptions. Outputs perfectly schema-aligned JSON — ideal for downstream use in search, analytics, and recommendation systems.
+---
+## 📦 Qwen3-0.6B — Job Description Struct-Extractor
 
-🚀 Model Highlights
-Base Model: Qwen/Qwen3-0.6B
-Architecture: Decoder-only Transformer (Causal Language Model)
-Tokenizer: QwenTokenizer (same as base)
-Fine-Tuned For: Zero-hallucination, schema-conformant information extraction
-🎯 Task Overview
-Task: Extract structured information from job descriptions Output Format: Strict JSON following a predefined schema Use Cases:
+A fine-tuned version of **Qwen3-0.6B** designed for **accurate extraction of structured job attributes** from raw job descriptions. Outputs perfectly schema-aligned JSON — ideal for downstream use in search, analytics, and recommendation systems.
 
-Automated JD parsing into structured fields
-Building search/match systems for talent platforms
-HR data cleaning & analytics pipelines
-Resume/job matching engines
-🧪 Example Usage (via transformers)
+---
+
+### 🚀 Model Highlights
+
+* **Base Model**: [Qwen/Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B)
+* **Architecture**: Decoder-only Transformer (Causal Language Model)
+* **Tokenizer**: `QwenTokenizer` (same as base)
+* **Fine-Tuned For**: Zero-hallucination, schema-conformant information extraction
+
+---
+
+### 🎯 Task Overview
+
+**Task**: Extract structured information from job descriptions
+**Output Format**: Strict JSON following a predefined schema
+**Use Cases**:
+
+* Automated JD parsing into structured fields
+* Building search/match systems for talent platforms
+* HR data cleaning & analytics pipelines
+* Resume/job matching engines
+
+---
+
+### 🧪 Example Usage (via `transformers`)
+
+```python
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
@@ -97,9 +113,15 @@ Salary: SGD 7,500 - 10,000 monthly
 """
 
 print(get_structured_jd(jd))
+```
 
-🧠 Training Details
-Data: Mix of real and synthetic job descriptions from multiple industries and regions (IN/EU/US/Remote)
-Objective: Strict extraction without hallucination
-Labels: JSON schema covering key job-related fields (titles, skills, compensation, location, etc.)
-Prompting Strategy: Instruction-tuned with schema enforcement
+---
+
+### 🧠 Training Details
+
+* **Data**: Mix of real and synthetic job descriptions from multiple industries and regions (IN/EU/US/Remote)
+* **Objective**: Strict extraction without hallucination
+* **Labels**: JSON schema covering key job-related fields (titles, skills, compensation, location, etc.)
+* **Prompting Strategy**: Instruction-tuned with schema enforcement
+
+---
